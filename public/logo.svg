@@ -1,30 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="100%" height="100%">
-  <!-- Background Container -->
-  <rect width="256" height="256" rx="56" fill="#15283F"/>
-  
-  <!-- Main Dose Track 'D' Symbol -->
-  <g transform="translate(48, 48)">
-    <!-- Continuous Outer Path / Capsule Top & Arc -->
-    <path d="M 30,16 
-             L 80,16 
-             C 115,16 136,36 136,80 
-             C 136,124 115,144 80,144 
-             L 30,144 
-             Z" 
-          fill="none" 
-          stroke="#FFFFFF" 
-          stroke-width="24" 
-          stroke-linejoin="round" 
-          stroke-linecap="round"/>
-          
-    <!-- Precise Active Tracking Notch (Recorded Moment Indicator) -->
-    <path d="M 72,112 
-             L 96,80 
-             L 120,112" 
-          fill="none" 
-          stroke="#16A995" 
-          stroke-width="20" 
-          stroke-linecap="round" 
-          stroke-linejoin="round"/>
-  </g>
+  <rect width="256" height="256" rx="56" fill="#2F1F4F"/>
+  <path d="M72 54H184V86H146V202H110V86H72V54Z" fill="#F4EEE2"/>
+  <path d="M52 176C84 160 108 154 128 154C148 154 172 160 204 176V204H52V176Z" fill="#E3A03A"/>
 </svg>
