@@ -4,6 +4,7 @@
   --plum: #2f1f4f;
   --plum-deep: #201536;
   --paper: #f4eee2;
+  --paper-strong: #efe4d2;
   --saffron: #e3a03a;
   --moss: #486d4f;
   --brick: #9a463d;
@@ -11,6 +12,7 @@
   --ink-soft: #625d66;
   --white: #ffffff;
   --line: rgba(47, 31, 79, 0.14);
+  --line-strong: rgba(47, 31, 79, 0.22);
   --shadow: 0 18px 32px rgba(47, 31, 79, 0.12);
 }
 
@@ -24,7 +26,9 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background:
+    radial-gradient(circle at top, rgba(227, 160, 58, 0.08), transparent 30%),
+    var(--paper);
   color: var(--ink);
   font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif;
 }
@@ -43,6 +47,15 @@ select {
 
 button {
   cursor: pointer;
+}
+
+button:hover,
+.primary-button:hover,
+.secondary-button:hover,
+.text-button:hover,
+.nav-button:hover,
+.profile-row:hover {
+  transform: translateY(-1px);
 }
 
 img {
@@ -88,6 +101,7 @@ img {
   display: grid;
   place-items: center;
   overflow: hidden;
+  box-shadow: 0 10px 20px rgba(47, 31, 79, 0.18);
 }
 
 .brand-mark.small {
@@ -136,6 +150,7 @@ img {
   gap: 8px;
   padding: 0.9rem 1.2rem;
   font-weight: 600;
+  border: 1px solid transparent;
 }
 
 .primary-button {
@@ -153,6 +168,7 @@ img {
 .secondary-button {
   background: rgba(47, 31, 79, 0.06);
   color: var(--plum);
+  border-color: rgba(47, 31, 79, 0.06);
 }
 
 .text-button {
@@ -218,9 +234,9 @@ img {
 }
 
 .preview-window {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.82);
   border: 1px solid var(--line);
-  border-radius: 26px;
+  border-radius: 28px;
   box-shadow: var(--shadow);
   overflow: hidden;
 }
@@ -356,10 +372,10 @@ img {
 .editor-card,
 .empty-card,
 .due-card {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--line);
   border-radius: 22px;
-  box-shadow: 0 10px 26px rgba(47, 31, 79, 0.06);
+  box-shadow: 0 12px 28px rgba(47, 31, 79, 0.07);
 }
 
 .feature-card,
@@ -435,13 +451,14 @@ img {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 280px 1fr;
-  background: var(--paper);
+  background: linear-gradient(180deg, var(--paper) 0%, #f7f1e8 100%);
 }
 
 .sidebar {
-  background: rgba(47, 31, 79, 0.96);
+  background: rgba(47, 31, 79, 0.98);
   color: var(--white);
   padding: 26px 16px;
+  border-right: 1px solid rgba(255,255,255,0.08);
 }
 
 .profile-switcher {
@@ -499,6 +516,7 @@ img {
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 18px;
+  padding: 8px 0 0;
 }
 
 .title-block h1 {
@@ -544,7 +562,7 @@ img {
 
 .due-card {
   padding: 22px;
-  background: linear-gradient(135deg, rgba(227, 160, 58, 0.08), rgba(47, 31, 79, 0.04));
+  background: linear-gradient(135deg, rgba(227, 160, 58, 0.1), rgba(47, 31, 79, 0.04));
 }
 
 .due-line {
@@ -625,6 +643,7 @@ img {
   margin-bottom: 18px;
   display: grid;
   gap: 16px;
+  background: rgba(255,255,255,0.8);
 }
 
 .field-grid {
@@ -646,9 +665,18 @@ select {
   width: 100%;
   border-radius: 10px;
   border: 1px solid var(--line);
-  background: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.75);
   color: var(--ink);
   padding: 0.8rem 0.9rem;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: rgba(47, 31, 79, 0.33);
+  box-shadow: 0 0 0 4px rgba(47, 31, 79, 0.06);
 }
 
 textarea {
