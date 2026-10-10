@@ -69,11 +69,11 @@ type MedicineForm = {
 };
 
 const STORAGE_KEYS = {
-  profiles: 'tuesday.profiles',
-  medicines: 'tuesday.medicines',
-  doseLogs: 'tuesday.doseLogs',
-  stockLogs: 'tuesday.stockLogs',
-  selectedProfile: 'tuesday.selectedProfile',
+  profiles: 'dosetrack.profiles',
+  medicines: 'dosetrack.medicines',
+  doseLogs: 'dosetrack.doseLogs',
+  stockLogs: 'dosetrack.stockLogs',
+  selectedProfile: 'dosetrack.selectedProfile',
 };
 
 const initialProfiles: Profile[] = [
@@ -415,9 +415,9 @@ function LandingPage() {
       <header className="topbar landing-header">
         <div className="brand-wrap">
           <div className="brand-mark">
-            <img src="/logo.svg" alt="Tuesday logo" />
+            <img src="/logo.svg" alt="DoseTrack logo" />
           </div>
-          <span className="brand-word">Tuesday</span>
+          <span className="brand-word">DoseTrack</span>
         </div>
         <nav className="landing-nav" aria-label="Main site navigation">
           <a href="#product">Product</a>
@@ -441,7 +441,7 @@ function LandingPage() {
             </div>
           </div>
 
-          <div className="hero-preview" aria-label="Tuesday app preview">
+          <div className="hero-preview" aria-label="DoseTrack app preview">
             <div className="preview-window">
               <div className="preview-header">
                 <span className="dot dot-plum" />
@@ -525,7 +525,7 @@ function LandingPage() {
             <h2>Personal records stay in your control.</h2>
           </div>
           <p>
-            Tuesday keeps medicine records in the browser for local use and is designed to respect account separation for each person in the app. Reminders only work while the app is open unless real notification infrastructure is added and tested. This app is not a medical device and does not make medical recommendations.
+            DoseTrack keeps medicine records in the browser for local use and is designed to respect account separation for each person in the app. Reminders only work while the app is open unless real notification infrastructure is added and tested. This app is not a medical device and does not make medical recommendations.
           </p>
         </section>
 
@@ -707,7 +707,7 @@ function AppLayout(props: AppLayoutProps) {
         </div>
       </section>
 
-      {archivedMedicines.length > 0 && (
+      {props.archivedMedicines.length > 0 && (
         <section className="panel-card">
           <h3>Archived</h3>
           {props.archivedMedicines.map((medicine) => (
@@ -919,9 +919,9 @@ function AppLayout(props: AppLayoutProps) {
       <aside className="sidebar">
         <div className="brand-block">
           <div className="brand-mark small">
-            <img src="/logo.svg" alt="Tuesday logo" />
+            <img src="/logo.svg" alt="DoseTrack logo" />
           </div>
-          <span className="brand-word">Tuesday</span>
+          <span className="brand-word">DoseTrack</span>
         </div>
 
         <div className="profile-switcher">
@@ -953,7 +953,7 @@ function AppLayout(props: AppLayoutProps) {
         <header className="workspace-header">
           <div className="title-block">
             <p className="eyebrow">{props.selectedProfile.name}</p>
-            <h1>Tuesday</h1>
+            <h1>DoseTrack</h1>
           </div>
           <div className="header-actions">
             <button type="button" className="secondary-button small" onClick={() => setTab('today')}>
